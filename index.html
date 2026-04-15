@@ -43,23 +43,55 @@
                              superior clerical skills and ability to efficiently 
                              prioritize assignments. </p>
                              <div class="tab-titles">
-                                <p class="tab-links active-link">Education</p>
-                                <p class="tab-links">Skills</p>
-                                <p class="tab-links">Experience</p>
+                                <p class="tab-links active-link" onclick="opentab('Education')">Education</p>
+                                <p class="tab-links" onclick="opentab('Skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('Experience')">Experience</p>
                              </div>
-                             <div class="tab-contents">
+                             <!-- ---------------Education Portion------------- -->
+                             <div class="tab-contents active-tab" id="Education">
+                                <ul>
+                                    <li><span> B.Sc in EEE</span><br> Daffodil International University (2022–Present) </li>
+                                    <li><span> HSC (Science)</span><br> Bogura Government College (2018–2020) </li>
+                                    <li><span> SSC (Science)</span><br> Bogura YMCA Public School & College (2008–2018) </li>
+                                </ul>
+                             </div>
+                             <!-- -----------------------------Skills Portion------------- -->
+                              <div class="tab-contents" id="Skills">
                                 <ul>
                                     <li><span> Programming</span><br> C++, Python, MATLAB </li>
                                     <li><span> Development</span><br> VS Code, GitHub </li>
-                                    <li><span> AI & Data</span><br> Colab, Jupyter </li>
+                                    <li><span> AI & Data</span><br> Google Colab, Jupyter NoteBook </li>
                                     <li><span> Circuit Design</span><br> Tinkercad, PSpice, Proteus </li>
                                     <li><span> Embedded Systems</span><br> Arduino, ESP32, ESP8266 </li>
                                     <li><span> Design Tools</span><br> Canva, Illustrator, Premiere Pro </li>
+                                </ul>
+                             </div>
+                             <!-- -----------------------Experience Portion------------- -->
+                              <div class="tab-contents" id="Experience">
+                                <ul>
+                                    <li><span> Deputy Joint Secretary</span><br> DIU Film Society (2024–2025) </li>
+                                    <li><span> Student Advisor</span><br> IEEE IAS DIU SB Chapter (2025-Present) </li>
                                 </ul>
                              </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for (tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+
     </body>
 </html>
